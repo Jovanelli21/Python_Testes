@@ -1,0 +1,26 @@
+mulher_menor = 0
+homem = 0
+maiores = 0
+print("=====CADASTRE UM CIDADÃO=====")
+print("------------------------------")
+while True:
+    idade = int(input("Idade: "))
+    if idade > 18:
+        maiores += 1
+    sexo = ""
+    while sexo not in ["M", "F"]:
+        sexo = str(input("Sexo [M/F]: ")).strip().upper()
+    if sexo == "M":
+        homem += 1
+    if idade < 20 and sexo == "F":
+        mulher_menor += 1
+    print("------------------------")
+    pergunta = ""
+    while pergunta not in ["S", "N"]:
+       pergunta = str(input("Deseja continuar ? [S/N]: ")).strip().upper()
+    if pergunta == "N":
+        print("O programa foi finalizado.")
+        break
+print(f"Há {maiores} com mais de 18 anos."
+      f"\nFoi cadastrado {homem} homens."
+      f"\nHá {mulher_menor} mulheres com menos de 20 anos.")
