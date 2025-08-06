@@ -1,0 +1,28 @@
+print("\033[1m=====NOVO MERKADINHO=====\033[0m")
+print("\033[1m-------------------------\033[0m")
+total = 0
+maior_mil = 0
+preco_barato = 0
+produto_barato = ""
+primeiro_produto = True
+while True:
+    produto = str(input("Digite o nome do produto: ")).strip().upper()
+    preco = float(input("Digite o preço do produto R$: "))
+    total += preco
+    if preco > 1000:
+        maior_mil += 1
+    if primeiro_produto or preco < preco_barato:
+        preco_barato = preco
+        produto_barato = produto
+        primeiro_produto = False
+    pergunta = ""
+    while pergunta not in ["S", "N"]:
+        pergunta = str(input("Deseja adquirir mais algum produto ? [S/N]: ")).strip().upper()
+    if pergunta == "N":
+        print("O programa foi finalizado.")
+        break
+
+print(f"\nResumo da compra:"
+      f"\nTotal gasto: {total}"
+      f"\nQuantidade de produtos acima de R$1.000: {maior_mil}"
+      f"\nO produto mais barato da lista é {produto_barato}")
