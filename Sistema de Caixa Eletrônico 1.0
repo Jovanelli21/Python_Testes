@@ -1,0 +1,12 @@
+print("===== CAIXA ELETRÔNICO =====")
+saque = int(input("Digite o valor para saque (R$): "))
+notas = [100, 50, 20, 10, 5, 2, 1]
+i = 0
+print("\nNotas entregues:")
+while saque > 0 and i < len(notas):
+    nota = notas[i]
+    quantidade = saque // nota
+    if quantidade > 0:
+        print(f"{quantidade} nota(s) de R${nota}")
+        saque %= nota
+    i += 1
